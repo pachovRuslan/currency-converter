@@ -11,7 +11,7 @@ import { S } from "./components/header/Header_Styles";
 
 function App() {
   const [isDark, setIsDark] = useState(true);
-  const [currencyName, setCurrencyName] = useState("usd");
+  const [currencyName] = useState("usd");
   const [currencyData, setCurrencyData] = useState<CurrencyType | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
