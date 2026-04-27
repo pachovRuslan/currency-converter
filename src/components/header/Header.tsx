@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from 'react';
-export const Header = () => {
+import { S } from './Header_Styles';
+type HeaderPropsType = {
+  isDark: boolean;
+  onThemeToggle: () => void;
+}
+export const Header = ({ isDark, onThemeToggle }: HeaderPropsType) => {
 const [time, setTime] = useState(new Date());
 
 useEffect(() => {
@@ -12,8 +17,16 @@ useEffect(() => {
 
 
     return (
-        <div>
-            {time.toLocaleString("ru-RU")}
-        </div>
+      <S.Header>
+        <S.MainHeaderBlock>
+ <S.TimeText> {time.toLocaleString("ru-RU")}</S.TimeText>
+ <S.ThemeSwitchButton onClick={onThemeToggle}>
+          {isDark ? "☀️ Светлая" : "🌙 Тёмная"}
+        </S.ThemeSwitchButton>
+        </S.MainHeaderBlock>
+
+  
+      </S.Header>
+       
     );
 };

@@ -12,5 +12,21 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.colors.text};
     font-family: 'Segoe UI', sans-serif;
     transition: all 0.3s ease;
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  button {
+    border: none;
+    outline: none;
+  }
+
+  input, select {
+    border: none;
+    outline: none;
   }
 `;
